@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>formulaire d'inscription</title>
+  <style type="text/css">
+    label {
+      display: inline-block;
+      width: 200px;
+      margin: 5px;
+      text-align: left;
+    }
+    input[type=text], input[type=password], select {
+      display: inline-block;
+      width: 200px;
+    }
+    input[type=radio] {
+      margin-left: 45px;
+    }
+    input[type=checkbox] {
+      margin-right: 190px;
+    }
+    button {
+      padding: 5px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+<div align="left">
+  <h1>formulaire d'inscription</h1>
+  <form action="#" th:action="@{/inscription}" method="post" th:object="${user}">
+    <label>nom :</label>
+    <input type = "text" th:field="*{nom}" /><br/>
+    <label>prenom :</label>
+    <input type = "text" th:field="*{prenom}" /><br/>
+    <label>date de naissance :</label>
+    <input type = "text" th:field="*{dateNaissance}" /><br/>
+    <label>email :</label>
+    <input type = "email" th:field="*{email}" /><br/>
+    <label>mot de passe :</label>
+    <input type = "password" th:field="*{motDepasse}" /><br/>
+    <label>sexe :</label>
+    <input type = "radio" th:field="*{sexe}" value="masculin"/>masculin
+    <input type = "radio" th:field="*{sexe}" value="féminin"/>féminin<br/>
+    <label>célibataire :</label>
+    <input type = "checkbox" th:field="*{celibataire}" /><br/>
+    <label>profession :</label>
+    <select th:field="*{profession}">
+      <option th:each="prof : ${listeProfession}" th:value="${prof}" th:text="${prof}"/>
+    </select>
+    <br/>
+    <label>remarques :</label>
+    <textarea rows ="5" cols ="50" th:field="*{remarques}"></textarea><br/>
+    <button type = "submit">valider</button>
+  </form>
+</div>
+</body>
+</html>
