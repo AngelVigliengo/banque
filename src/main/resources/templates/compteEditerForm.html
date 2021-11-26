@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>formulaire d'inscription</title>
+  <style type="text/css">
+    label {
+      display: inline-block;
+      width: 200px;
+      margin: 5px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+<div align="left">
+  <h1>formulaire d'inscription</h1>
+  <form action="#" th:action="@{/compte/editer}" method="post" th:object="${compte}">
+    <label>id :</label>
+    <input type = "text" th:field="*{id}" /><br/>
+    <label>nom :</label>
+    <input type = "text" th:field="*{nom}" /><br/>
+    <label>solde :</label>
+    <input type = "text" th:field="*{solde}" /><br/>
+    <br/>
+    <label>Description :</label>
+    <textarea rows ="5" cols ="50" th:field="*{description}"></textarea><br/>
+    <button type = "submit">valider</button>
+  </form>
+</div>
+</body>
+</html>

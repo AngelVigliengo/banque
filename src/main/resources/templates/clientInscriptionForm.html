@@ -28,7 +28,7 @@
 <body>
 <div align="left">
   <h1>formulaire d'inscription</h1>
-  <form action="#" th:action="@{/inscription}" method="post" th:object="${user}">
+  <form action="#" th:action="@{/client/creer}" method="post" th:object="${user}">
     <label>nom :</label>
     <input type = "text" th:field="*{nom}" /><br/>
     <label>prenom :</label>

@@ -32,18 +32,6 @@ public class ClientController {
         return "url du client :"+ client;
     }
 
-    @RequestMapping(path = "/créer")
-    @ResponseBody
-    public String creationClient(){
-        return "création d'un client";
-    }
-
-    @RequestMapping(path = "/editer")
-    @ResponseBody
-    public String editionClient(){
-        return "édition d'un client";
-    }
-
     @RequestMapping(path = "/effacer")
     @ResponseBody
     public String effacerClient(){

@@ -35,18 +35,6 @@ public class ComptesController {
         return "url du compte :"+ compte;
     }
 
-    @RequestMapping(path = "/créer")
-    @ResponseBody
-    public String creationCompte(){
-        return "création d'un compte";
-    }
-
-    @RequestMapping(path = "/editer")
-    @ResponseBody
-    public String editionCompte(){
-        return "édition d'un compte";
-    }
-
     @RequestMapping(path = "/effacer")
     @ResponseBody
     public String effacerCompte(){
